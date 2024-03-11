@@ -1,0 +1,84 @@
+@mixin media-query-mobile{
+    @media (max-width: 576px) {
+        @content;
+    }            
+}
+
+header {
+    height: 75px;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: $fondo-trans;
+    z-index: 5000;
+    @include media-query-mobile(){
+        height: 28px;
+    }
+    img{
+        height: 75px;
+        @include media-query-mobile(){
+            height: 28px;
+        }
+    }
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: baseline;
+        list-style-type: none;
+        padding-top: 13px;
+        @include media-query-mobile(){
+            padding-top: 6px;
+        }
+    }
+    .list-item a{
+        text-decoration: none;
+        font-size: $h3-md;
+        font-weight: 400;
+        color: $color-normal;
+        padding: 10px;
+        &:hover{
+            color: $color-acento;
+        }
+        &:active{
+            background-color: $fondo-notrans;
+        }
+        @include media-query-mobile(){
+            font-size: $p-sm;
+            padding: 2px;
+        }
+    }
+    .logo-a a{
+        font-size: $h2-md;
+        padding: 12px 0px 12px 12px;
+        font-family: $font-inteli, serif;
+        font-weight: 400;
+        font-style: normal;
+        color: $color-normal;
+        &:hover{
+            color: $color-normal;
+        }
+        @include media-query-mobile(){
+            font-size: $h3-sm;
+            padding: 10px 0px 4px 3px;
+        }
+    }        
+    .logo-b a{
+        font-size: $h2-md;
+        padding: 12px 12px 12px 0px;
+        font-family: $font-fire, sans-serif;
+        font-weight: 900;
+        font-style: normal;
+        color: $color-fire;        
+        &:hover{
+            color: $color-fire;
+        }
+        @include media-query-mobile(){
+            font-size: $h3-sm;
+            padding: 10px 3px 4px 0px;
+        }
+    }
+        
+}    

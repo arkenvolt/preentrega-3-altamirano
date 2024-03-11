@@ -1,0 +1,24 @@
+@mixin media-query-mobile{
+    @media (max-width: 576px) {
+        @content;
+    }            
+}
+
+footer {
+    background-color: $fondo-notrans;
+    color: $color-normal;
+    width: auto;
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @include media-query-mobile(){
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footerAA {
+        font-family: '$font-fire', serif;
+        padding: 0px 14px 0px 14px;
+    }
+}

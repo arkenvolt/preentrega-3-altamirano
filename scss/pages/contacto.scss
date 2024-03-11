@@ -1,0 +1,14 @@
+main{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+#contacto{
+    height: 95vh;
+    width: 100%;
+    background-image: url(../images/contacto.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 10px;
+    color: $color-acento;
+    }
+}

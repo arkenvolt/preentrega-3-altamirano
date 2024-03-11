@@ -1,0 +1,36 @@
+@mixin media-query-mobile{
+    @media (max-width: 576px) {
+        @content;
+    }            
+}
+
+header ul{
+    padding-top: 18px;
+    padding-left: 8px;
+    @include media-query-mobile(){
+        padding-top: 18px;
+        padding-left: 2px;
+    }
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 75px;
+    background-color: $fondo-notrans;
+    h1{
+        color: $color-acento;
+    }
+    #sistemas-carousel{
+        background-color: $fondo-notrans;
+        padding-top: 10px;
+        color: $fondo-notrans;
+        .carousel-caption {
+            background-color: $fondo-trans;
+        }
+        img {
+            height: 80vh;
+            background-size:cover;
+        }
+    }
+}

@@ -1,0 +1,166 @@
+@mixin media-query-mobile{
+    @media (max-width: 576px) {
+        @content;
+    }            
+}
+
+#galeriaProyectos {
+    background-image: url(../images/RocketFac.jpg);
+    background-size:cover;    
+    padding-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 60px auto auto auto 35px;
+    grid-template-areas: 
+    "type top top top"
+    "type projects projects aside"
+    "type projects projects aside"
+    "type projects projects aside"
+    "bottom bottom bottom bottom"
+    ;
+    column-gap: 30px;
+    row-gap: 30px;
+    @include media-query-mobile(){
+        padding-top: 70px;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 80px auto auto auto auto auto auto 52px;
+        grid-template-areas: 
+        "type top top"
+        "type projects projects"
+        "type projects projects"
+        "type projects projects"
+        "type projects projects"
+        "type projects projects"
+        "aside aside aside"
+        "bottom bottom bottom";        ;
+        column-gap: 10px;
+        row-gap: 10px;
+        h1{
+            font-size: $h3-md - 5;
+            padding-top: 3px;
+            text-align: center;
+        }
+    }
+    h2{
+    color: $color-acento;
+    @include media-query-mobile(){
+        font-size: $h3-sm;
+    }
+    }
+    h3{
+    color: $color-acento;
+    @include media-query-mobile(){
+        font-size: $h3-sm;
+    }
+    }
+    p{
+    color: $color-normal;
+    @include media-query-mobile(){
+        font-size: $p-sm + 4;
+    }
+    }
+    #top {
+        background-color:$fondo-trans;
+        grid-area: top;
+        color: $color-acento;
+        text-align:left;
+        padding-top: 12px;
+        padding-left: 24px;
+        @include media-query-mobile(){
+            padding-top: 6px;
+            padding-left: 12px;
+        }
+    }
+    #type {
+        background-color:$fondo-trans;
+        grid-area: type;
+        text-align: center;
+        padding-top: 12px;
+        @include media-query-mobile(){
+            padding: 6px 6px;
+        }
+        h2{
+            text-align: center;                
+            padding-top: 12px;
+        @include media-query-mobile(){
+            font-size: $h3-sm;
+        }
+        }
+        h3{
+            text-align: center;
+            padding-top: 12px;
+        }
+        ul{
+            text-align: center;
+            color: $color-normal;
+            padding: 12px 0;
+        }
+    }
+    #projects {
+        background-color:$fondo-trans;
+        grid-area: projects;
+        color: $color-acento;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 12px;
+        justify-content: space-around;
+        align-content: space-around;
+        .project{
+            margin: 6px;
+            width: 45%;
+            height: 200px;
+            background-color: $fondo-clarotrans;
+            border-radius: 8px;
+            text-align: center;
+            display: flex;
+            @include media-query-mobile(){
+                width: 94%;
+            }
+            .gallery-photo{
+                padding: 0;
+                margin: 0;
+                width: 25%;
+                border-top-left-radius: 8px;
+                border-bottom-left-radius: 8px;
+                background-color: $color-acento;
+                object-fit: cover;
+                }
+            .gallery-text{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                padding: 6px;
+                margin: 0;
+                width: 75%;
+                border-top-left-radius: 8px;
+                border-bottom-left-radius: 8px;                
+                }
+            }
+    }
+    #aside {
+        background-color: $fondo-trans;
+        display: flex;
+        flex-direction: column;
+        grid-area: aside;
+        padding: 9px;
+        align-items: center;
+        ul{
+            list-style-type: none;
+            text-align: center;
+            color: $color-normal;
+            padding: 12px 0;
+        }
+    }
+    #bottom {
+        background-color: $fondo-trans;
+        grid-area: bottom;
+        padding-top: 5px;
+        text-align: center;
+        @include media-query-mobile(){
+        }
+    }
+}
+

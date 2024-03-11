@@ -1,0 +1,26 @@
+main{
+    display: flex;
+    flex-direction: column;
+    justify-items: left;
+    text-align: center;
+h1{
+    color: $color-acento;
+}
+h2{
+    color: $color-normal;
+    text-align: center;
+    padding: 0 10%;
+}
+#arquitectura{
+    display: flex;
+    flex-direction: column;
+    align-items:baseline;
+    align-content: center;
+        img{
+        margin-top: 12px;
+        @include media-query-mobile(){
+        overflow: scroll;}
+    }    
+    }
+    
+}
